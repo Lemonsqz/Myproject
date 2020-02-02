@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <span class = 'letter'><h1>Список оружия</h1></span>
+    <div class="block1">
+
+      <ul>
+
+        {% for rifle in rifle_list %}
+        <li>
+          <a href = '{{ rifle.get_absolute_url }}'>{{rifle.rif_name|safe}}</a>
+        </li>
+        {% endfor %}
+
+      </ul>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<div class='block1'>
+  <p style="text-align: center;">
+    <img src="{% static 'images/hsars.jpg' %}">
+  </p>
+  <ul>
+    <li><a href="{% url 'weapons' %}" style= "color: yellow">Револьверы и пистолеты</a></li>
+    <li><a href="{% url 'rifles' %}" style= "color: yellow">Ружья</a></li>
+  </ul>
+</div>
+{% endblock %}

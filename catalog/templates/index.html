@@ -1,0 +1,64 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load static %}
+<link rel='stylesheet' type="text/css" href='{% static "css/news.css" %}'/>
+<link rel='stylesheet' type="text/css" href='{% static "css/centerimg.css" %}'/>
+<link rel='stylesheet' type="text/css" href='{% static "css/letter.css" %}'/>
+<link rel='stylesheet' type="text/css" href='{% static "css/comic.css" %}'/>
+<script>
+  document.createElement('figure');
+  document.createElement('figcaption');
+</script>
+<style>
+figure {
+   /* Цвет фона */
+  background: black;
+  display: block; /* Блочный элемент */
+  width: 400px; /* Ширина */
+  height: 190px; /* Высота */
+  float: left; /* Блоки выстраиваются по горизонтали */
+  margin: 30px 20px 10px 30px; /* Отступы */
+  text-align: center; /* Выравнивание по центру */
+ }
+
+ figure p {
+  margin-bottom:20px; /* Отступ снизу */
+ }
+</style>
+<div class="let" style= "margin-left: 20%" >
+  <h1 >Энциклопедия</h1>
+ </div>
+
+
+
+<div class="block1">
+  <div class='let' style="text-align: center"> <p> Монстры прорвались в наш мир, их плоть будет твоим трофеем в напряженной мультиплеерной игре от создателей Crysis. Уникальное сочетание игровых механик PvE и PvP в суровой хардкорной игре про охоту на монстров.
+    Игра Hunt: Showdown от компании Crytek сейчас находится в «раннем доступе» Steam и в программе Game Preview на XBOX. Релиз для этих платформ назначен на 27 августа, а на PS4 – этой осенью.</p>
+    </div>
+    <p style="text-align: center; "><iframe frameborder="0" src="//www.youtube.com/embed/woUC9cEzg60" width="600" height="350" class="note-video-clip"></iframe><br></p>
+
+</div>
+    <article>
+       <figure>
+         <a href="{% url 'prestige' %}">
+        <p><img src="{% static "images/hspres.jpg" %}" alt="My image" style= 'margin-top: 10px'></p>
+         </a>
+        <figcaption>Престиж</figcaption>
+
+       </figure>
+       <figure>
+         <a href="{% url 'allweapons' %}">
+        <p><img src="{% static "images/hsars.jpg." %}" alt="" style= 'margin-top: 10px'></p>
+         </a>
+        <figcaption>Арсенал оружия</figcaption>
+       </figure>
+    </article>
+
+
+
+<body>
+
+
+</body>
+{% endblock %}
