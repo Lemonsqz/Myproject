@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}"/>
+	<meta charset="UTF-8">
+	<title>Build</title>
+
+</head>
+<body>
+	<div class="wrapper">
+		{% include "navbar.html" %}
+		
+		<div class="content">
+		
+		{% block content %}{% endblock %}
+		</div>
+		<div class="footer">
+			<hr>
+			<p>
+				<a href="#">Home</a>
+				<a href="#">Contacts</a>
+				<a href="#">About</a>
+				<a href="#">Products</a>
+			</p>
+			
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+body {
+	background-color: #F6F6F6;
+	margin: 0;
+	height: 100%;
+}
+
+h1 {
+	color: green;
+}
+
+ul li {
+	list-style: none;
+	padding: 20px 0 5px 0;
+	text-align: center;
+}
+
+form p {
+
+	font-size: 20px;
+	color: #2F4F4F;
+}
+
+textarea {
+		
+		display: flex;
+}
+
+
+.navbar ul li {
+	text-align: right;
+	padding: 20px 70px 0 0;
+	
+	font-size: 30px;
+}
+
+.navbar ul {
+	display: flex;
+	float: right;
+}
+
+.navbar {
+	height: 100px;
+	width: 100%;
+	background-color: #000000;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: #FFD700;
+}
+
+.footer ul li {
+	
+	padding: 20px 70px 0 0;
+	
+	font-size: 30px;
+}
+
+.footer p {
+
+	text-align: center;
+	
+}
+
+.footer {
+
+	margin-top: 800px;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	
+}
+
+.footer a {
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	font-size: 20px;
+	padding: 20px 70px 0 0;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+
+.content {
+	padding-left: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	min-height: 75%;
+}
+
+.create_product {
+	border: solid 2px;
+	border-radius: 10px;
+	margin-top: 50px;
+	width: 160px;
+	height: 50px;
+	background: #000000 ;
+}
+
+.create_product a {
+	display: block;
+	text-align: center;
+	padding-top: 13px;
+	text-decoration: none;
+	color: #FF0000;
+}

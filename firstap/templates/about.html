@@ -1,0 +1,19 @@
+{% extends "basement.html" %}
+
+{% block content %}
+
+<h2> ABOUT </h2>
+
+<p>
+	{{ my_text }}, {{ my_numb }}, {{ my_list }}
+</p>
+
+<ul>
+{% for my_item in phone %}
+	<li>{{ my_item|safe }}</li>
+{% endfor %}
+{{ obj.img|safe }}
+</ul>
+
+
+{% endblock %}

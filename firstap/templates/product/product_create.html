@@ -1,0 +1,17 @@
+{% extends 'basement.html' %}
+
+{%  block content %}
+
+<!-- <form>
+	{{ form.as_p }}
+	<input type="submit" value="Save">
+</form> -->
+
+ {% for product in product_create %}
+	<li>
+		<<a href="{{ product.get_absolute_url }}">{{ product.name|safe }}</a>
+	</li>
+
+ {% endfor %}
+
+{% endblock %}
