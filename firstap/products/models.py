@@ -1,6 +1,7 @@
 from django.db import models
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django.urls import reverse
+from django.conf import settings
 
 # Create your models here.
 class Product(models.Model):
@@ -25,3 +26,19 @@ class Product(models.Model):
 	# class OtherInfo (models.Model):
 	# 	name	= models.CharField(max_length = 100)
 
+class OrderProduct(models.Model):
+	item = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+	def __str__(self):
+		return self.name
+
+class Order(models.Model):
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,
+							 on_delete=models.CASCADE)
+	items = models.ManyToManyField(OrderProduct)
+	start_date = models.DateTimeField(auto_now_add=True)
+	ordered_date = models.DateTimeField()
+	ordered = models.BooleanField(default=False)
+
+	def __str__(self):
+		return self.user.username

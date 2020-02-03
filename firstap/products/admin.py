@@ -3,13 +3,17 @@ from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 
-from .models import Product
+from .models import *
 
 
 
 
 class ProductAdmin(SummernoteModelAdmin):
 	summernote_fields = ('img', 'title', 'description' )
+
+
 	
 
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Order)
+admin.site.register(OrderProduct)
