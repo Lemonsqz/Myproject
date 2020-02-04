@@ -12,6 +12,9 @@
 {% for my_item in phone %}
 	<li>{{ my_item|safe }}</li>
 {% endfor %}
+{% for my_item in all_items %}
+	<ul>{{ my_item|safe }}</ul>
+{% endfor %}
 {{ obj.img|safe }}
 </ul>
 

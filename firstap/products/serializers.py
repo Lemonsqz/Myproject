@@ -4,3 +4,7 @@ class ProductSerializer(serializers.Serializer):
 	title = serializers.CharField(max_length=120)
 	name = serializers.CharField(max_length=120)
 	summary = serializers.CharField(max_length=120)
+	name = serializers.CharField(max_length=120)
+	summary	 = serializers.CharField(max_length=120)
+	category = serializers.CharField(max_length=120)
+	img = serializers.CharField(max_length=120)

@@ -35,7 +35,7 @@ urlpatterns = [
     path('create/', product_create_view, name='create' ),
     path('products/', products_view, name='products' ),
     path('summernote/', include('django_summernote.urls')),
-    path('api_products/', ProductView.as_view()),
+    path('api_products/', ProductAPIView.as_view()),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

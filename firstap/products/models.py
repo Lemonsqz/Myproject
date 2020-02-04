@@ -4,12 +4,23 @@ from django.urls import reverse
 from django.conf import settings
 
 # Create your models here.
+
+CATEGORY_CHOICES = (
+	('D', 'Devices'),
+	('O', 'Others'),
+	('A', 'Accessory')
+)
+
+
+
+
 class Product(models.Model):
 	name		= models.CharField(max_length = 50, blank=True) #blank true значит поле может быть пустым
 	title   	= models.CharField(max_length = 120) #необходимо указать длину max_length
 	description = models.TextField(blank = True, null = True)
 	price 		= models.DecimalField(decimal_places = 2, max_digits = 10000, null = True, blank = True)
 	summary		= models.TextField(blank = False, null = False)
+	category 	= models.CharField(choices=CATEGORY_CHOICES, max_length = 1 )
 	featured    = models.BooleanField() # null = True, default = True
 	img 		= models.TextField(max_length=500, blank=True) 
 

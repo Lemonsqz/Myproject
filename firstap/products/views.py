@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from .serializers import ProductSerializer
 
 #здесь создаем API 
-class ProductView(APIView):
+class ProductAPIView(APIView):
 	def get(self, request):
 		products = Product.objects.all()
 		serializer = ProductSerializer(products, many=True)
