@@ -29,16 +29,17 @@ def contact_view(request):
 
 	return render(request, 'contacts.html', context)
 
-def products_view(request):
-	context = {
-		'obj': Product.objects.all()
-	}
 
-	return render(request, 'products.html', context )
 
-# class ProductView(ListView):
-# 	model = Product
-# 	template_name = "products.html"
+class ProductView(ListView):
+ 	model = Product
+ 	template_name = "products.html"
+
+class ProductDetailView(DetailView):
+	model = Product
+	template_name = "product/detail.html"
+
+
 
 def dynamic_lookup_view(request, id):
 	obj = Product.objects.get(id=id)
@@ -48,6 +49,16 @@ def dynamic_lookup_view(request, id):
 
 	return render(request, 'product/detail.html', context )
 
+
+
+
+
+# def products_view(request):
+# 	context = {
+# 		'obj': Product.objects.all()
+# 	}
+
+# 	return render(request, 'products.html', context )
 
 
 

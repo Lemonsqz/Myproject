@@ -24,6 +24,7 @@ from pages import views
 
 
 
+
 urlpatterns = [
 	
     path('admin/', admin.site.urls),
@@ -31,11 +32,13 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('about/', about_view, name='about' ),
     path('contact/', contact_view, name='contact' ),
-    path('detail/<int:id>/', dynamic_lookup_view, name='detail' ),
+    path('detail/<slug>/', ProductDetailView.as_view(), name='detail' ),
     path('create/', product_create_view, name='create' ),
-    path('products/', products_view, name='products' ),
+    path('products/', ProductView.as_view(), name='products' ),
     path('summernote/', include('django_summernote.urls')),
     path('api_products/', ProductAPIView.as_view()),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

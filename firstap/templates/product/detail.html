@@ -1,7 +1,17 @@
 {% extends 'basement.html' %}
 
-{%  block content %}
-
-
+{% block content %}
+<div class="product_detail">
+	
+	<div class="product_item">
+		<div class="image_field">{{ object.img | safe }}</div>
+			<div class="product_info"> 
+				<a href="{{ item.get_absolute_url }}">{{ object.summary | safe }} </a>
+				<div class="description_field">{{ object.description | safe }}</div>
+			</div>
+						
+		<div class="product_price"><p>{{ object.price | safe }}<i class="fa fa-rub" aria-hidden="true"></i></p></div>
+	</div>
+</div>
 
 {% endblock %}

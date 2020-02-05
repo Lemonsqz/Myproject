@@ -2,6 +2,7 @@ from django.db import models
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django.urls import reverse
 from django.conf import settings
+from django.shortcuts import reverse
 
 # Create your models here.
 
@@ -23,13 +24,16 @@ class Product(models.Model):
 	category 	= models.CharField(choices=CATEGORY_CHOICES, max_length = 1 )
 	featured    = models.BooleanField() # null = True, default = True
 	img 		= models.TextField(max_length=500, blank=True) 
+	slug 		= models.SlugField()
 
 	def __str__(self):
 		return self.name #переименовывает объект в более удобный формат в админке( title )
 
 	def get_absolute_url(self):
 
-		return reverse('detail', kwargs={"id": self.id}) #позволяет создавать страницу при переходе на продукт
+		return reverse("detail", kwargs={
+			'slug': self.slug
+		}) #позволяет создавать страницу при переходе на продукт
 
 # class Article(models.Model):
 # 	title	= models.CharField(max_length = 150)
