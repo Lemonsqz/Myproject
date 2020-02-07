@@ -35,6 +35,19 @@ class Product(models.Model):
 			'slug': self.slug
 		}) #позволяет создавать страницу при переходе на продукт
 
+	def get_add_to_cart_url(self):
+
+		return reverse("add-to-cart", kwargs={
+			'slug': self.slug
+		})
+
+	def get_remove_from_art_url(self):
+		return reverse("remove-from-cart", kwargs={
+            'slug': self.slug
+        })
+
+
+
 # class Article(models.Model):
 # 	title	= models.CharField(max_length = 150)
 
@@ -42,14 +55,18 @@ class Product(models.Model):
 	# 	name	= models.CharField(max_length = 100)
 
 class OrderProduct(models.Model):
+	# user = models.ForeignKey(settings.AUTH_USER_MODEL,
+	# 							on_delete=models.CASCADE)
+	ordered = models.BooleanField(default=False)
 	item = models.ForeignKey(Product, on_delete=models.CASCADE)
+	quantity = models.IntegerField(default=1)
 
 	def __str__(self):
-		return self.name
+		return f"{self.quantity} of {self.item.name}"
 
 class Order(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,
-							 on_delete=models.CASCADE)
+							 on_delete=models.CASCADE, blank=True, null=True)
 	items = models.ManyToManyField(OrderProduct)
 	start_date = models.DateTimeField(auto_now_add=True)
 	ordered_date = models.DateTimeField()
@@ -57,3 +74,4 @@ class Order(models.Model):
 
 	def __str__(self):
 		return self.user.username
+
