@@ -1,9 +1,6 @@
 {% extends 'basement.html' %}
 
 {% block content %}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 <div class="detail_content">
 	<div class="product_detail">
 		
@@ -19,7 +16,7 @@
 
 	</div>
 	<div class="add_to_cart">
-		<a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+		<a href="{{ object.get_add_to_cart_url }}" >
 			Add to cart
 			<i class="fa fa-cart-plus" aria-hidden="true"></i>
 
@@ -27,29 +24,6 @@
 		<a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
 			Remove from cart
 		</a>
-=======
-=======
->>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
-=======
->>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
-<div class="product_detail">
-	
-	<div class="product_item">
-		<div class="image_field">{{ object.img | safe }}</div>
-			<div class="product_info"> 
-				<a href="{{ item.get_absolute_url }}">{{ object.summary | safe }} </a>
-				<div class="description_field">{{ object.description | safe }}</div>
-			</div>
-						
-		<div class="product_price"><p>{{ object.price | safe }}<i class="fa fa-rub" aria-hidden="true"></i></p></div>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
-=======
->>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
-=======
->>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 	</div>
 </div>
-
 {% endblock %}
