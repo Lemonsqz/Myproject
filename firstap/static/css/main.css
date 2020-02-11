@@ -29,7 +29,7 @@ textarea {
 .main_content {
 	display: block;
 	height: 100%;
-	min-height: 2000px;
+	min-height: 1000px;
 }
 
 .navbar_custom  ul li {
