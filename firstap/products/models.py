@@ -43,9 +43,12 @@ class Product(models.Model):
 
 class OrderProduct(models.Model):
 <<<<<<< HEAD
+<<<<<<< HEAD
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,
 								on_delete=models.CASCADE, blank=True, null=False)
 	ordered = models.BooleanField(default=False)
+=======
+>>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 =======
 >>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 	item = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -60,6 +63,9 @@ class Order(models.Model):
 =======
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,
 							 on_delete=models.CASCADE)
+<<<<<<< HEAD
+>>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
+=======
 >>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 	items = models.ManyToManyField(OrderProduct)
 	start_date = models.DateTimeField(auto_now_add=True)
