@@ -19,9 +19,9 @@ i {
 	
 }
 
-.product_price {
+.products_list {
 	
-	min-width: 75px;
+	
 }
 
 .catalog_item {
@@ -44,7 +44,7 @@ i {
 .product_info {
 	padding: 10px 0 0 10px;
 	height: 40px;
-	min-width: 480px;
+	max-width: 580px;
 	margin-bottom: 4px;
 }
 
@@ -64,14 +64,10 @@ i {
 
 .product_price p {
 	padding: 10px 0 0 0;
-	margin-left: 10px;
+	margin-left: 50px;
 	text-align: right;
 }
 
 .catalog_item {
 	margin-bottom: 20px;
-}
-
-.image_field {
-	min-width: 130px;
 }

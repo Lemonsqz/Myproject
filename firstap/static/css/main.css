@@ -26,6 +26,7 @@ textarea {
 }
 
 
+<<<<<<< HEAD
 .main_content {
 	display: block;
 	height: 100%;
@@ -33,24 +34,27 @@ textarea {
 }
 
 .navbar_custom  ul li {
+=======
+.navbar ul li {
+>>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 	text-align: right;
 	padding: 20px 70px 0 0;
 	
 	font-size: 30px;
 }
 
-.navbar_custom ul {
+.navbar ul {
 	display: flex;
 	float: right;
 }
 
-.navbar_custom {
+.navbar {
 	height: 100px;
 	width: 100%;
 	background-color: #000000;
 }
 
-.navbar_custom ul li a {
+.navbar ul li a {
 	text-decoration: none;
 	color: #FFD700;
 }
@@ -70,8 +74,8 @@ textarea {
 
 .footer {
 
-	margin-top: 50px;
-
+	margin-top: 800px;
+	bottom: 0;
 	height: 100px;
 	width: 100%;
 	
@@ -82,7 +86,7 @@ textarea {
 	text-decoration: none;
 	color: #000000;
 	font-size: 20px;
-	padding: 20px 35px 0 35px;
+	padding: 20px 70px 0 0;
 }
 
 .wrapper {
