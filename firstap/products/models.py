@@ -55,8 +55,8 @@ class Product(models.Model):
 	# 	name	= models.CharField(max_length = 100)
 
 class OrderProduct(models.Model):
-	# user = models.ForeignKey(settings.AUTH_USER_MODEL,
-	# 							on_delete=models.CASCADE)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,
+								on_delete=models.CASCADE, blank=True, null=False)
 	ordered = models.BooleanField(default=False)
 	item = models.ForeignKey(Product, on_delete=models.CASCADE)
 	quantity = models.IntegerField(default=1)
@@ -65,8 +65,8 @@ class OrderProduct(models.Model):
 		return f"{self.quantity} of {self.item.name}"
 
 class Order(models.Model):
-	user = models.ForeignKey(settings.AUTH_USER_MODEL,
-							 on_delete=models.CASCADE, blank=True, null=True)
+	# user = models.ForeignKey(settings.AUTH_USER_MODEL,
+	# 						 on_delete=models.CASCADE, blank=True, null=True)
 	items = models.ManyToManyField(OrderProduct)
 	start_date = models.DateTimeField(auto_now_add=True)
 	ordered_date = models.DateTimeField()
