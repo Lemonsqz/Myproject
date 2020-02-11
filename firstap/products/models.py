@@ -44,9 +44,12 @@ class Product(models.Model):
 class OrderProduct(models.Model):
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,
 								on_delete=models.CASCADE, blank=True, null=False)
 	ordered = models.BooleanField(default=False)
+=======
+>>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 =======
 >>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 =======
@@ -64,6 +67,9 @@ class Order(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL,
 							 on_delete=models.CASCADE)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
+=======
 >>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
 =======
 >>>>>>> parent of fe8e3b8... доб модель и вьюха корзины
