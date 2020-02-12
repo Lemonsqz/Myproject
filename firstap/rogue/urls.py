@@ -37,7 +37,7 @@ urlpatterns = [
     path('products/', ProductView.as_view(), name='products' ),
     path('summernote/', include('django_summernote.urls')),
     path('api_products/', ProductAPIView.as_view()),
-    path('add-to-cart/<slug>/', ProductDetailView.as_view(), name='add-to-cart' ),
+    path('add-to-cart/<slug>/', add_to_cart, name='add-to-cart' ),
     path('remove-from-cart/<slug>/', remove_from_cart, name='remove-from-cart'),
     # path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
 

@@ -26,6 +26,7 @@ class Product(models.Model):
 	img 		= models.TextField(max_length=500, blank=True) 
 	slug 		= models.SlugField()
 
+
 	def __str__(self):
 		return self.name #переименовывает объект в более удобный формат в админке( title )
 
@@ -41,7 +42,7 @@ class Product(models.Model):
 			'slug': self.slug
 		})
 
-	def get_remove_from_art_url(self):
+	def get_remove_from_cart_url(self):
 		return reverse("remove-from-cart", kwargs={
             'slug': self.slug
         })
@@ -55,8 +56,8 @@ class Product(models.Model):
 	# 	name	= models.CharField(max_length = 100)
 
 class OrderProduct(models.Model):
-	# user = models.ForeignKey(settings.AUTH_USER_MODEL,
-	# 							on_delete=models.CASCADE)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL,
+								on_delete=models.CASCADE)
 	ordered = models.BooleanField(default=False)
 	item = models.ForeignKey(Product, on_delete=models.CASCADE)
 	quantity = models.IntegerField(default=1)
