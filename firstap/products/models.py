@@ -25,6 +25,7 @@ class Product(models.Model):
 	featured    = models.BooleanField() # null = True, default = True
 	img 		= models.TextField(max_length=500, blank=True) 
 	slug 		= models.SlugField()
+	trailer		= models.TextField(blank = True, null=True)
 
 
 	def __str__(self):

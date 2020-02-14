@@ -14,15 +14,15 @@ def home_view(request):
 	return render(request, 'index.html')
 
 def about_view(request):
-	obj = Product.objects.get(name='phone')
+	# obj = Product.objects.get(name='phone')
 
-	my_context = {
-		"all_items": Product.objects.all(),
-		"phone": [obj.img, obj.price],
-		"my_text": "This is information about us",
-		"my_numb": "azino 777",
-		"my_list": [123, 321, 'abc']
-	}
+	my_context = {}
+	# 	"all_items": Product.objects.all(),
+	# 	"phone": [obj.img, obj.price],
+	# 	"my_text": "This is information about us",
+	# 	"my_numb": "azino 777",
+	# 	"my_list": [123, 321, 'abc']
+	# }
 	return render(request, 'about.html', my_context)
 
 def contact_view(request):

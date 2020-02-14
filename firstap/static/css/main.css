@@ -29,7 +29,7 @@ textarea {
 .main_content {
 	display: block;
 	height: 100%;
-	min-height: 2000px;
+	min-height: 1000px;
 }
 
 .navbar_custom  ul li {
@@ -92,7 +92,8 @@ textarea {
 
 
 .content {
-	padding-left: 50px;
+/*	padding-left: 50px;
+	padding-right: 50px;*/
 	margin-right: auto;
 	margin-left: auto;
 	min-height: 75%;
@@ -113,4 +114,34 @@ textarea {
 	padding-top: 13px;
 	text-decoration: none;
 	color: #FF0000;
+}
+
+.about {
+	height: 400px;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	background-image: url('//psmedia.playstation.com/is/image/psmedia/ps4-pro-section-background-desktop-tablet-01-ps4-en-13jan20_1578928385221?$_Page_Section_Landscape_Large_v2$');
+}
+
+.about p, h2 {
+	color: white;
+}
+
+.about_info {
+	padding: 50px 0 0 70px;
+}
+
+.trailer {
+	padding: 0;
+	border-radius: 8px;
+	height: 364px;
+	width: 640px;
+	border: solid 2px black;
+}
+
+.container h1 {
+	color: black;
+	margin-top: 50px;
+	text-align: center;
 }

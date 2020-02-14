@@ -25,5 +25,21 @@
 			Remove from cart
 		</a>
 	</div>
+	{% if object.trailer %}
+	<div class="container">
+		<h1>Трейлер игры</h1>
+		<div class="row">
+			<div class="col-sm"></div>
+			
+			<div class="trailer col-sm mt-3">
+
+				{{ object.trailer | safe}}
+
+			</div>
+			
+			<div class="col-sm"></div>
+		</div>
+	</div>
+	{% endif %}
 </div>
 {% endblock %}

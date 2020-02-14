@@ -58,14 +58,19 @@ i {
 }
 
 .description_field p {
+
+	line-height: 1; 
 	color: #4e4e4e;
 	padding: 10px 0 0 10px;
+}
+
+.description_field {
+	width: 300px;
 }
 
 .product_price p {
 	padding: 10px 0 0 0;
 	margin-left: 10px;
-	text-align: right;
 }
 
 .catalog_item {
