@@ -1,11 +1,47 @@
 <!-- навбар -->
+{% load cart_template_tags %}
 <div class="navbar_custom">
+	<div class="row">
+		<div class="col-9">
+			<ul>
+				<li><a href="{% url 'home' %}">Главная</a></li>
+				<li><a href="{% url 'contact' %}">Контакты</a></li>
+				<li><a href="{% url 'about' %}">Информация</a></li>
+				<li><a href="{% url 'products' %}">Продукты</a></li>
+		</div>
+			{% if request.user.is_authenticated %}
+		<div class="col-1">
 
-	<ul>
-		<li><a href="{% url 'home' %}">Home</a></li>
-		<li><a href="{% url 'contact' %}">Contacts</a></li>
-		<li><a href="{% url 'about' %}">About</a></li>
-		<li><a href="{% url 'products' %}">Products</a></li>
-	</ul>
-	
+
+		          <span> {{ request.user|cart_count }} </span>
+		          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+		          <span> Корзина </span>
+
+
+		</div>	
+		<div class="col-1">
+
+		        <a href="{% url 'account_logout' %}">
+		          Выйти из системы 
+		        </a>
+
+		</div>	
+		    {% else %}
+		<div class="col-1">
+
+		        <a href="{% url 'account_login' %}">
+		           Войти 
+		        </a>
+
+		</div>
+		<div class="col-1">
+
+		        <a href="{% url 'account_signup' %}">
+		           Регистрация 
+		        </a>
+
+		</div>		
+		    {% endif %}	    
+		</ul>
+	</div>
 </div>

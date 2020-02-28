@@ -4,6 +4,16 @@ body {
 	height: 100%;
 }
 
+
+
+
+.fa-video-camera, .fa-share-square, .fa-users {
+	text-align: center;
+	font-size: 90px;
+	padding-bottom: 50px;
+
+}
+
 h1 {
 	color: green;
 }
@@ -33,7 +43,7 @@ textarea {
 }
 
 .navbar_custom  ul li {
-	text-align: right;
+	text-align: left;
 	padding: 20px 70px 0 0;
 	
 	font-size: 30px;
@@ -41,18 +51,36 @@ textarea {
 
 .navbar_custom ul {
 	display: flex;
-	float: right;
+	float: left;
 }
 
+
+
 .navbar_custom {
+	text-align: center;
 	height: 100px;
 	width: 100%;
-	background-color: #000000;
+	background-color: #212529;
+}
+
+.navbar_custom  a {
+	
 }
 
 .navbar_custom ul li a {
 	text-decoration: none;
-	color: #FFD700;
+	color: #EACE2D;
+}
+
+.nav_login {
+	padding-top: 20px;
+	margin-right: 50px;
+}
+
+.col-1 {
+	padding-top: 20px;
+	color: white;
+	font-size: 15px;
 }
 
 .footer ul li {
@@ -117,6 +145,8 @@ textarea {
 }
 
 .about {
+
+	display: block;
 	height: 400px;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -129,7 +159,33 @@ textarea {
 }
 
 .about_info {
+	
 	padding: 50px 0 0 70px;
+}
+
+.ps4_content {
+	margin-top: 300px;
+	margin-bottom: 300px;
+	text-align: center;
+	padding-left: 70px;
+	padding-right: 70px;
+	
+}
+
+
+.about2 {
+	margin-top: 100px;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('https://psmedia.playstation.com/is/image/psmedia/ps4-overview-ps-plus-section-background-desktop-01-ps4-en-03sep18_1536150838322?$_Page_Section_Landscape_Large_v2$')
+}
+
+.about_info2 {
+	width: 400px;
+	padding: 50px 0 0 70px;
+	color: white;
+
 }
 
 .trailer {
@@ -145,3 +201,39 @@ textarea {
 	margin-top: 50px;
 	text-align: center;
 }
+
+.contacts {
+	margin-top: 100px;
+}
+
+.contacts_social {
+	margin-top: 50px;
+
+}
+
+.contacts_phone {
+
+	margin-top: 50px;
+}
+
+.contacts_phone ul li {
+	list-style: square;
+	text-align: left;
+}
+
+.icons i {
+	color: black;
+	font-size: 35px;
+	padding-left: 40px;
+}
+
+.card {
+	background-color: #F6F6F6;
+	border: 0;
+}
+
+.btn-primary {
+	background-color: #34aaf2;
+	border-color: #34aaf2;
+}
+

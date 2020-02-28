@@ -1,8 +1,58 @@
 {% extends "basement.html" %}
 
 {% block content %}
+{% load static %}
+	<div class="contacts container">
+		<div class="row">
+			<div class="col-md-7"><img src="{% static 'images/call.jpg' %}" alt=""></div>
 
-<h2> CONTACTS </h2>
-<!-- <p> {{ description }}</p> -->
+			<div class="col-md-5"><h1 style="text-align: left;">Контакты</h1>
+				<p style="padding-top: 40px;">Мы всегда рады помочь клиентам. Вы можете обратиться к нам лично, написать в любимый мессенджер, позвонить или отправить сообщение. Наши специалисты проконсультируют вас в любое время.</p>
+
+			</div>
+
+			<div class="contacts_social col-md-12">
+				<hr>
+			    <p>
+			  	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				    Вы можете обратиться к нам через социальные сети
+				  </button>
+			    </p>
+				<div class="collapse" id="collapseExample">
+				  <div class="card card-body">
+				    <p>Получите онлайн-консультацию в официальных группах в социальных сетях и мессенджерах.</p>
+				    <div class="icons">
+				    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+				    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+					<a href="#"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a>
+
+					</div>
+
+				  </div>
+				</div>
+			</div>
+			<div class="contacts_phone col-md-12">
+				<hr>
+			    <p>
+			  	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+				    Позвоните в службу поддержки клиентов
+				  </button>
+			    </p>
+				<div class="collapse" id="collapseExample1">
+				  <div class="card card-body">
+				    <ul>
+				    	<li>0500 с мобильного телефона МегаФон при нахождении в России или 8 800 550-05-00 для абонентов других операторов;</li>
+				    	<li>+7 926 111-05-00 при нахождении за рубежом.</li>
+				    </ul>
+
+
+				  </div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
 
 {% endblock %}

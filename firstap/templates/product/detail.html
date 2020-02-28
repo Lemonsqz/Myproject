@@ -15,6 +15,7 @@
 		</div>
 
 	</div>
+	{% if request.user.is_authenticated %}
 	<div class="add_to_cart">
 		<a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
 			Add to cart
@@ -25,6 +26,13 @@
 			Remove from cart
 		</a>
 	</div>
+	{% else %}
+	<div class="add_to_cart">
+		<a href="{% url 'account_login' %}" class="btn btn-danger btn-md my-0 p">
+			Вам необходимо войти в систему, чтобы добавить в корзину
+		</a>
+	</div>	
+	{% endif %}
 	{% if object.trailer %}
 	<div class="container">
 		<h1>Трейлер игры</h1>
