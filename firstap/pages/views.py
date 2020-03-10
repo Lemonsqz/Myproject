@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from products.models import *
 from django.views import generic
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect
@@ -13,16 +13,15 @@ def home_view(request):
 
 	return render(request, 'index.html')
 
+class OrderSummaryView(View):
+    def get(self, *args, **kwargs):
+        return render(self.request, 'order_summary.html')
+
 def about_view(request):
 	# obj = Product.objects.get(name='phone')
 
 	my_context = {}
-	# 	"all_items": Product.objects.all(),
-	# 	"phone": [obj.img, obj.price],
-	# 	"my_text": "This is information about us",
-	# 	"my_numb": "azino 777",
-	# 	"my_list": [123, 321, 'abc']
-	# }
+
 	return render(request, 'about.html', my_context)
 
 def contact_view(request):
