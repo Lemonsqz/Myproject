@@ -2,35 +2,64 @@
 
 {% block content %}
 <div class="container">
+<h1 style="padding-bottom: 25px;">Общий заказ</h1>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th></th>
+      <th scope="col">Название продукта</th>
+      <th scope="col">Цена</th>
+      <th scope="col">Количество</th>
+      <th scope="col">Общая сумма</th>
+      <th></th>
+
     </tr>
   </thead>
   <tbody>
+  {% for order_item in object.items.all %}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{{ order_item.item.get_absolute_url }}">{{ order_item.item.img | safe}}</a></td>
+      <td><a href="{{ order_item.item.get_absolute_url }}">{{ order_item.item.name | safe }}</a></td>
+      <td>{{ order_item.item.price | safe}} P</td>
+      <td>{{ order_item.quantity | safe}}</td>
+      <td>{{ order_item.get_total_item_price }} P</td>
+      <td>		
+      	<a href="{% url 'remove-from-cart' order_item.item.slug %} ">
+			<i class="fa fa-trash" aria-hidden="true" style="color: red; font-size: 20px;"></i>
+
+		</a>
+	  </td>
+
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  {% empty %}
+
+	<tr>
+		<td>корзина пуста</td>
+		<td colspan="5">
+			<a class="btn btn-primary float-right ml-3" href="{% url 'products' %}">Перейти в каталог</a>
+		</td>
+	</tr>
+
+  {% endfor %}
+  {% if object.total_price %}
+  	<tr>
+  		<td></td>
+  		<td colspan="5"><b>Общая сумма</b></td>
+  		<td>{{ object.total_price }} P</td>
+  		
+  	</tr>
+	<tr>
+		<td></td>
+		<td colspan="6">
+			<a class="btn btn-success my-3 float-right ml-3" href="#">Оформить заказ</a>
+			<a class="btn btn-primary my-3 float-right" href="{% url 'products' %}">Продолжить покупки</a>
+		</td>
+	</tr>
+  {% endif %}
   </tbody>
 </table>
+
 </div>
 {% endblock %}

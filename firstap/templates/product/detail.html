@@ -18,13 +18,11 @@
 	{% if request.user.is_authenticated %}
 	<div class="add_to_cart">
 		<a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
-			Add to cart
+			Добавить в корзину
 			<i class="fa fa-cart-plus" aria-hidden="true"></i>
 
 		</a>
-		<a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
-			Remove from cart
-		</a>
+
 	</div>
 	{% else %}
 	<div class="add_to_cart">

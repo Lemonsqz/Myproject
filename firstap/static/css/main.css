@@ -6,6 +6,15 @@ body {
 
 
 
+td a:hover{
+	text-decoration: none;
+	color: #000;
+
+}
+
+td a{
+	color: #000;
+}
 
 .fa-video-camera, .fa-share-square, .fa-users {
 	text-align: center;
@@ -45,8 +54,9 @@ textarea {
 .navbar_custom  ul li {
 	text-align: left;
 	padding: 20px 70px 0 0;
-	
-	font-size: 30px;
+	letter-spacing: 0.8px;
+	font-size: 20px;
+	text-transform: uppercase;
 }
 
 .navbar_custom ul {
@@ -61,7 +71,7 @@ textarea {
 	height: 100px;
 	width: 100%;
 	background-color: #212529;
-	
+
 }
 
 .navbar_custom  a {
@@ -71,6 +81,7 @@ textarea {
 .navbar_custom ul li a {
 	text-decoration: none;
 	color: #EACE2D;
+
 }
 
 .nav_login {

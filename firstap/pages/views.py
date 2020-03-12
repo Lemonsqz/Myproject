@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from products.models import *
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic import ListView, DetailView, View
 from django.contrib import messages
@@ -13,9 +16,19 @@ def home_view(request):
 
 	return render(request, 'index.html')
 
-class OrderSummaryView(View):
+class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
-        return render(self.request, 'order_summary.html')
+
+        try:
+            order = Order.objects.get(user=self.request.user, ordered=False)
+            context = {
+                'object': order
+            }
+            return render(self.request, 'order_summary.html', context)
+        except ObjectDoesNotExist:
+            messages.error(self.request, "You don't have an active Order")
+            return redirect("/")
+        
 
 def about_view(request):
 	# obj = Product.objects.get(name='phone')
@@ -52,7 +65,7 @@ def dynamic_lookup_view(request, id):
 
 	return render(request, 'product/detail.html', context )
 
-
+@login_required
 def add_to_cart(request, slug):
     item = get_object_or_404(Product, slug=slug)
     order_item, created = OrderProduct.objects.get_or_create(
@@ -84,7 +97,7 @@ def add_to_cart(request, slug):
 
 
 
-
+@login_required
 def remove_from_cart(request, slug):
     item = get_object_or_404(Product, slug=slug)
     order_qs = Order.objects.filter(
@@ -106,12 +119,44 @@ def remove_from_cart(request, slug):
             else:
                 order_item.delete()
                 messages.info(request, "This item was removed.")
+                return redirect("order-summary")
         else:
             messages.info(request, "This item was not in your cart.")
-            return redirect("detail", slug=slug)
+            return redirect("order-summary")
 
     else:
         messages.info(request, "You don't have an active order.")
 
-        return redirect("detail", slug=slug)
-    return redirect("detail", slug=slug)
+        return redirect("order-summary")
+    return redirect("order-summary")
+
+
+@login_required
+def remove_single_item_from_cart(request, slug):
+    item = get_object_or_404(Product, slug=slug)
+    order_qs = Order.objects.filter(
+        user=request.user,
+        ordered=False
+        )
+    if order_qs.exists():
+        order = order_qs[0]
+
+        if order.items.filter(item__slug=item.slug).exists():
+            order_item = OrderProduct.objects.filter(
+                item=item,
+                user=request.user,
+                ordered=False
+            )[0]
+            order_item.quantity -= 1
+            order_item.save()
+            messages.info(request, "This item was removed.")
+            return redirect("order-summary")
+        else:
+            order_item.delete()
+            messages.info(request, "This item was removed.")
+
+    else:
+        messages.info(request, "You don't have an active order.")
+
+        return redirect("order_summary")
+    return redirect("order_summary")
