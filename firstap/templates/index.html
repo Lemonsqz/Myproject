@@ -3,8 +3,20 @@
 {% block content %}
 {% load static %}
 
-<picture>
-	<img src="{% static 'images/ea.jpeg' %}" alt="">
-	
-</picture>
+
+<div class="index">
+	<div class="index_first_part sm">
+	</div>
+	<div class="container">
+		<h1>Найди свою идеальную игру</h1>
+		<div class="row mt-5">
+			<div class="col-6 mb-5" style="text-align: center;"><a href="/detail/RDR/">{{ rdr.add_img|safe }} {{ rdr.name|safe }}</a></div>
+			<div class="col-6 mb-5" style="text-align: center;"><a href="/detail/twisted_metal/">{{ tm.add_img|safe }} {{ tm.name|safe }}</a></div>
+			<div class="col-6" style="text-align: center;"><a href="/detail/gow/">{{ gow.add_img|safe }} {{ gow.name|safe }}</a></div>
+			<div class="col-6" style="text-align: center;"><a href="/detail/lou/">{{ lou.add_img|safe }} {{ lou.name|safe }}</a></div>
+
+		</div>
+	</div>
+</div>
+
 {% endblock %}

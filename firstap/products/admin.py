@@ -9,7 +9,7 @@ from .models import *
 
 
 class ProductAdmin(SummernoteModelAdmin):
-	summernote_fields = ('img', 'title', 'description', 'trailer' )
+	summernote_fields = ('img', 'title', 'description', 'trailer', 'add_img', )
 
 
 	

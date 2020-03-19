@@ -51,6 +51,14 @@ textarea {
 	min-height: 1000px;
 }
 
+.index_first_part {
+
+	min-height: 600px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url(http://127.0.0.1:8000/static/images/hunt.jpeg);
+}
+
 .navbar_custom  ul li {
 	text-align: left;
 	padding: 20px 70px 0 0;
@@ -88,6 +96,12 @@ textarea {
 	padding-top: 20px;
 	margin-right: 50px;
 }
+
+.col-6 a {
+	color: black;
+	text-decoration: none;
+}
+
 
 .col-1 {
 	padding-top: 20px;

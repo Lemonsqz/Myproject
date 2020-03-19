@@ -24,6 +24,7 @@ class Product(models.Model):
 	category 	= models.CharField(choices=CATEGORY_CHOICES, max_length = 1 )
 	featured    = models.BooleanField() # null = True, default = True
 	img 		= models.TextField(max_length=500, blank=True) 
+	add_img		= models.TextField(max_length=500, blank=True)
 	slug 		= models.SlugField()
 	trailer		= models.TextField(blank = True, null=True)
 

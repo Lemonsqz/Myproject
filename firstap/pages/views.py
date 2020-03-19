@@ -12,9 +12,20 @@ from django.utils import timezone
 
 # Create your views here.
 
-def home_view(request):
+def index_view(request):
+    obj = Product.objects.all()
+    context = {
+        'rdr': obj[4],
+        'tm': obj[3],
+        'gow': obj[2],
+        'lou': obj[0],
+    }
 
-	return render(request, 'index.html')
+    return render(request, 'index.html', context)
+
+
+
+
 
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
@@ -31,19 +42,22 @@ class OrderSummaryView(LoginRequiredMixin, View):
         
 
 def about_view(request):
-	# obj = Product.objects.get(name='phone')
+	# obj = Product.objects.all()
+	# my_context = {
+ #    'get': obj[0].description,
+ #    }
 
-	my_context = {}
 
-	return render(request, 'about.html', my_context)
+	return render(request, 'about.html')
 
 def contact_view(request):
-	# obj = Product.objects.get(id=3)
-	context = {
-		# 'description':obj.description,
-	}
+	# obj = Product.objects.get(id=)
+	# context = {'test':obj,}
+ #    {
+	# 	# 'description':obj.description,
+	# }
 
-	return render(request, 'contacts.html', context)
+	return render(request, 'contacts.html',)
 
 
 
